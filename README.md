@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# A LEARNING PROJECT.
+My very first react project, explored fundamentals of React, TypeScript, TailWind and MUI.
+-----------------------------------------------------------------------------------------
+## GETTING STARTED
+Ensure you have [Node.js](https://nodejs.org/) installed.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 1. Clone the repository
+git clone <https://github.com/Unun42/fullstack-react-first-project.git>
 
-Currently, two official plugins are available:
+# 2. Navigate into the project directory
+cd fullstack-react-first-project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 3. Install dependencies (Vite, Tailwind, MUI, TypeScript)
+npm install
 
-## React Compiler
+# 4. Start the local development server
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# 5. Spring forth!
+somehow navigate yourself to http://localhost:5173, I belive in you.
+-----------------------------------------------------------------------------------------
+OVERALL 
+Spread myself quite thin, barely scraped the surface of MUI and TypeScript,
+lacked the time to properly refractor. Wrote some of the ugliest code known to man 
+(see < CheckoutForm > for the coding experience of a life-time!).
+Would've been happier if I focused on fewer things, still really enjoyed the process. 
+-----------------------------------------------------------------------------------------
+DEBOUNCE
+Implemented a debounce on the <Search> component. 
+When query state has initialized and not changed for 350ms then it sets a DebouncedQuery 
+and displays products depending on that query. 
+-----------------------------------------------------------------------------------------
+TRY-CATCH
+< fetchProducts > throws on HTTP-errors and propagates other potential errors to < useProductsData >,
+which wraps the fetch call in a try-catch that logs andcatches potential errors as well as
+dispatches ERROR action with state and proper a error message.
