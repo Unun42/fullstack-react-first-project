@@ -1,0 +1,14 @@
+/* Marquee is the conventional UI term for horizontally scrolling text content
+created this as a module to use @keyframes for my showbanner */
+@keyframes scrollText {
+    from { 
+        left: 0; 
+        transform: translateX(-100%);
+    }
+    to { 
+        left: 100%;
+        transform: translateX(0);
+     }
+}
+
+.marquee { animation: scrollText 6s linear forwards; }

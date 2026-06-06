@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Browse products, search categories, and manage your cart in Ninja Deals, a React-based demo webshop.">
+        <title>Ninja Deals | React Demo Webshop</title>
+        <script type="module" src="/src/main.tsx">
+        /* Vite SPA type="module" behaves like defer */
+        </script> 
+
+        <script> 
+/*    Reads pref/storage, set class, prevents FOUC by running before React exists   */
+
+/*          IF: saved is dark, 
+                OR: not saved And preference is dark, 
+            THEN: add dark class
+            ELSE: remove dark class                                                 */
+
+/*          Can maybe use useLayoutEffect instead of this??                         */ 
+            const savedTheme = localStorage.getItem("theme");
+            const userPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+            const useDark = savedTheme === "dark" || (!savedTheme && userPrefersDark);
+
+            /*  IF: force parameter (useDark) true, 
+                THEN keep token ("dark"), 
+                ELSE: remove token                                                  */ 
+            document.documentElement.classList.toggle("dark", useDark);
+        </script>
+    </head>
+
+    <body>
+        <div id="root">
+        </div>
+    </body>
+</html>

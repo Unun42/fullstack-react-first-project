@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* USED TO DEBUGG UI */
+/*   
+*, ::before, ::after {
+  outline: dashed 1px rgb(from currentColor r g b / .25);
+  outline-offset: -1px;
+}
+ */
+
+
+/* heard this was nice, need to doublecheck */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    min-height: 100svh;
+    max-width: 100%;
+    text-align: center;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Remove spin btn from number form inputs */ 
+input[type="number"] { appearance: textfield; }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0; 
+}
+
+
+/* scrollbar styling */ 
+::-webkit-scrollbar-thumb { 
+    background: var(--color-surface);
+    border-radius: 4px; 
+}
+
+/* highlighted text */ 
+::selection {
+    background: var(--accent);
+    color: var(--text-accent);
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Light mode */
+:root {
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #eaeeea;
+
+    --text: #111111;
+    --border: rgba(0, 0, 0, 0.12);
+
+
+    --accent: #00C853;
+    --accent-hover: rgba(22, 163, 74, 0.10);
+    --accent-active: oklch(82.8% 0.189 84.429);
+    --text-on-accent: #0b0b0b;
+    --focus: rgba(22, 163, 74, 0.30);
+
+    --success: #16a34a;
+    --loading: #d97706;
+    --error: #dc2626;
+    --info: #2563eb;
+}
+
+/* Dark mode */
+.dark {
+    --bg: #16161d;
+    --surface: #1f1f26;
+    --surface-2: #262630;
+    
+    --text: #e6e6e6;
+    --text-muted: rgba(230, 230, 230, 0.65);
+    --border: rgba(255, 255, 255, 0.10);
+
+    --accent: #00C853;
+    --accent-hover: #01ea5e;
+    --accent-active: oklch(82.8% 0.189 84.429);
+    --text-on-accent: #17171c;
+    --focus: rgba(0, 200, 83, 0.35);
+
+    --success: #22c55e;
+    --loading: #f59e0b;
+    --error: #ef4444;
+    --info: #3b82f6;
+}
+
+/* tell tw what tokens exist */
+@theme {
+    --color-background: var(--bg);
+    --color-surface: var(--surface);
+    --color-text: var(--text);
+    --color-border: var(--border);
+
+    --color-accent: var(--accent);
+    --color-accent-hover: var(--accent-hover);
+    --color-accent-active: var(--accent-active);
+    --color-text-on-accent: var(--text-on-accent);
+    --color-focus: var(--focus);
+
+    --color-success: var(--success);
+    --color-loading: var(--loading);
+    --color-error: var(--error);
+    --color-info: var(--info);
+}
+
+/* === APPLY LIKE THIS ===
+ -  <div className="bg-(--bg-page) text-(--color-text)">
+ -  focus:ring-(--color-focus)/50  // 50% opacity
+*/
+
+
+
+
+
+/* WOULD BE COOL TO USE AND EXTEND TAILWIND THEMES AND APPLY THEM AS MY STYLING */ 
+/* https://www.youtube.com/watch?v=JEJbSGtZxOw
+    contrast-color() easy adaption across themes--
+
+AUTO COLORS: text etc
+https://www.youtube.com/watch?v=JEJbSGtZxOw 
+*/ 
+
+/* 
+dvh - dynamic = 
+    when scrolling stops it will repaint to get to the bigger size. opening keyboard does not adapt well
+svh - small = 
+    on phones, assumes that elements are open at top 
+lvh - large = 
+    assumes the elements at top are closed
+*/
+
+/* DEFAULT WITH TAILWIND??
+*, ::before, ::after { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    font: inherit;
+} 
+*/
