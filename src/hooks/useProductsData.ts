@@ -21,7 +21,10 @@ const useProductsData = () => {
                 console.error("loadProducts catch: ", err);
 
                 // On failure, state object becomes { status: "error", error: ... }
-                dispatch({ type: "ERROR", error: "useProductsState catch error" })
+                dispatch({ 
+                    type: "ERROR", 
+                    // if err actual error constructor, then err.message, otherwise unknown
+                    error: err instanceof Error ? err.message : "unknown error in useProductsData"
             }
         };
 
