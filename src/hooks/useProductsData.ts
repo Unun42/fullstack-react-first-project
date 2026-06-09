@@ -25,7 +25,8 @@ const useProductsData = () => {
                     type: "ERROR", 
                     // if err actual error constructor, then err.message, otherwise unknown
                     error: err instanceof Error ? err.message : "unknown error in useProductsData"
-            })    // CHANGED AFTER SUBMIT DATE, MISSED THE ENDING PARENTHASES !!!
+                })    // CHANGED AFTER SUBMIT DATE, MISSED THE ENDING PARENTHASES !!!
+            };
         };
 
         // run once when hook mounts as dispatch is stable
